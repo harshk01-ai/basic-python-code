@@ -96,3 +96,72 @@ while num > 0:
     product = product * digit
     num = num // 10
 print('product of all digits:',product)
+
+# Mathematical & Logical Practice
+
+#1. Take a number n and find the factorial of that number using a loop.
+n = int(input("Enter a number: "))
+factorial = 1
+while n > 0:
+    factorial = factorial * n
+    n = n - 1
+print('factorial of number',factorial)
+
+#2. Take a number n and print all its divisors.
+n = int(input("Enter a number: "))
+i = 1
+print('divisors of ',n,':')
+while i <= n:
+    if n % i == 0:
+        print(i)
+    i +=1
+
+#3. Take a number and check if it is a prime number or not.
+
+num = int(input("Enter a number: "))
+i =1
+count = 0
+while i<=num:
+    if num % i == 0:
+        count += 1
+    i +=1
+if count == 2:
+    print("prime number")
+else:
+    print("not prime number")
+
+#4. Take two numbers a and b, and print all numbers between them that are
+# divisible by both 2 and 3.
+a = int(input("Enter a number: "))
+b = int(input("Enter another number: "))
+
+if a < b:
+    while a <= b:
+        if a % 2 == 0 and a % 3 == 0:
+            print(a)
+        a +=1
+else:
+    while b <= a:
+        if b % 2 == 0 and b % 3 != 0:
+            print(b)
+        b +=1
+
+#5. Take a number n and print the sum of all prime numbers up to n.
+
+n = int(input("Enter a number: "))
+i = 1
+sum = 0
+while i <= n:
+    j = 1
+    count = 0
+    while j <= i:
+        if i % j == 0:
+            count +=1
+    if count == 2:
+        sum += i
+    i = i + 1
+print('sum of all numbers:',sum)
+
+
+
+
