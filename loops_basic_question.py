@@ -163,5 +163,93 @@ while i <= n:
 print('sum of all numbers:',sum)
 
 
+# Typical Real-world Logic
+
+#1. Take a number n and print the count of even and odd digits in it.
+# Example: Input → 24356, Output → Even: 3, Odd: 2
+
+n = int(input("Enter a number: "))
+
+even_digit_count = 0
+odd_digit_count = 0
+while n > 0:
+    digit = n % 10
+    if digit % 2 == 0:
+        even_digit_count += 1
+    else:
+        odd_digit_count += 1
+    n = n // 10
+print('number of even digits:', even_digit_count)
+print('number of odd digits:', odd_digit_count)
+
+#2. Take a number n and print the sum of squares of the first n natural
+# numbers.
+# ○ Example: Input → 3, Output → 12 + 22 + 32 = 14
+n = int(input("Enter a number: "))
+i = 1
+sum_of_squares = 0
+while i<= n:
+    square = i ** 2
+    sum_of_squares += square
+    i = i + 1
+print('sum of squares:', sum_of_squares)
+
+#3. Take a number n and print the sum of cubes of the first n natural numbers.
+# Example: Input → 4, Output → 13 + 23 + 33 + 43 = 100
+n = int(input("Enter a number: "))
+i = 1
+sum_of_cubes = 0
+while i <= n:
+    cube = i ** 3
+    sum_of_cubes += cube
+    i = i + 1
+print('sum of cubes:', sum_of_cubes)
+
+#4. Take an integer and check whether it is a strong number (sum of factorials
+# of digits = number).
+# ○ Example: 145 → 1! + 4! + 5! = 145
+num = int(input("Enter a number: "))
+temp = num
+sum = 0
+
+while num > 0:
+    digit = num % 10
+    factorial = 1
+    while digit > 0:
+        factorial = factorial * digit
+        digit -= 1
+    sum = sum + factorial
+    num = num // 10
+if sum == temp:
+    print('strong number:', temp)
+else:
+    print('not strong number:', temp)
+
+#5. Take a number and check whether it is an Armstrong number.
+# Example: 153 → 13 + 53 + 33 = 153
+num = int(input("Enter a number: "))
+temp = num
+a = num
+count = 0
+sum = 0
+while num > 0:
+    digit = num % 10
+    count = count + 1
+    num = num // 10
+while temp > 0:
+    digit = temp % 10
+    sum = sum + digit**count
+    temp = temp // 10
+
+
+
+if sum == a:
+    print('Armstrong number:', a)
+else:
+    print('not Armstrong number:', a)
+
+
+
+
 
 
