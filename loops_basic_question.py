@@ -241,8 +241,6 @@ while temp > 0:
     sum = sum + digit**count
     temp = temp // 10
 
-
-
 if sum == a:
     print('Armstrong number:', a)
 else:
