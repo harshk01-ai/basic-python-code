@@ -76,8 +76,8 @@ print(count)
 # 10. Calculate and print the sum of all numerical elements in a list without using the
 # built-in sum() function.
 lst = [1,6,3,4,5]
-sum = 0
+el_sum = 0
 for i in lst:
-    sum += i
-print(sum)
+    el_sum += i
+print(el_sum)
 
