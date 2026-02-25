@@ -81,3 +81,160 @@ for i in lst:
     el_sum += i
 print(el_sum)
 
+# Intermediate List Questions
+
+# 1. Identify and print the largest element present in a list of numbers without using the
+# built-in max() function.
+
+lst = [1,6,3,4,5]
+largest = 0
+for i in lst:
+    if i > largest:
+        largest = i
+print(largest)
+
+
+# 2. Identify and print the smallest element present in a list of numbers without using
+# the built-in min() function.
+lst = [1,6,3,4,5]
+smallest = lst[0]
+
+for i in lst:
+    if i < smallest:
+        smallest = i
+print(smallest)
+
+
+# 3. Create a new list that contains the elements of the original list in reverse order,
+# without using the reverse() method or list slicing.
+
+lst = [1,6,3,4,5]
+new_list = []
+for i in range(len(lst)-1):
+    new_list.append(lst[i])
+print(new_list)
+
+# 4. Sort a list of numbers in ascending order using the logic of the Bubble Sort
+# algorithm, without using the built-in sort() method.
+
+lst = [1,6,3,4,5]
+for i in range(len(lst)-1):
+    for j in range(len(lst)-1):
+        if lst[j] > lst[j+1]:
+            lst[j], lst[j+1] = lst[j+1], lst[j]
+print(lst)
+
+
+# 5. Generate a new list from an original list, where all duplicate elements have been
+# removed, without using the built-in set() function.
+
+org_list = [1,6,3,4,5]
+new_list = []
+for i in org_list:
+    if i not in new_list:
+        new_list.append(i)
+print(new_list)
+
+
+# 6. Write a boolean function that checks whether a specified element is contained
+# within a given list.
+lst = [1,6,3,4,5]
+el = int(input("enter element:"))
+el_has = False
+for i in lst:
+    if el == i:
+        el_has = True
+        break
+print(el_has)
+
+# 7. Print only the elements from a list that are located at an index position which is an
+# even number (0, 2, 4, ...).
+
+lst = [1,6,3,4,5]
+for i in range(0,len(lst),2):
+    print(lst[i])
+
+
+# 8. Print only the elements from a list that are located at an index position which is an
+# odd number (1, 3, 5, ...).
+lst = [1,6,3,4,5]
+for i in range(1,len(lst),2):
+    print(lst[i])
+
+
+# 9. Iterate through a list of integers and separately count and print the total number of
+# even numbers and the total number of odd numbers.
+lst = [1,6,3,4,5]
+even_count = 0
+odd_count = 0
+for i in lst:
+    if i % 2 == 0:
+        even_count += 1
+    else:
+        odd_count += 1
+print("Even count:",even_count)
+print("odd count:",odd_count)
+
+# 10. Given a list of numbers, create and print a second list where each element is the
+# square of the corresponding element in the original list.
+
+org_list = [1,6,3,4,5]
+new_list = [x*x for x in org_list]
+print(new_list)
+
+# 11. Combine the elements of two separate lists into a single new list without using the
+# + or extend() operators.
+
+a = [1,2,3,4,5]
+b = [6,7,8,9]
+new_list = []
+for i in a:
+    new_list.append(i)
+for i in b:
+    new_list.append(i)
+print(new_list)
+
+# 12. Modify a list in place so that all numbers less than zero (negative numbers) are
+# removed.
+lst = [0,0,1,2,0,5,3,-1,-2]
+lst2 = lst.copy()
+for i in lst2:
+    if i < 0:
+        lst.remove(i)
+print(lst)
+
+# 13. Determine and print the second largest numerical value in a list without applying
+# any sorting techniques.
+
+lst = [1,6,3,4,5]
+largest = 0
+sec_largest = 0
+for i in lst:
+    if i > largest:
+        sec_largest = largest
+        largest = i
+    elif i > sec_largest and i != largest:
+        sec_largest = i
+print(largest)
+print(sec_largest)
+
+
+# 14. Implement a cyclic shift operation on a list where every element is moved one
+# position to the right, and the last element wraps around to the first position.
+
+lst = [1,6,3,4,5]
+time = int(input("enter time:"))
+for i in range(time):
+    lst.insert(0,lst.pop())
+print(lst)
+
+# 15. Write a function that returns True if a list is currently arranged in ascending order,
+# and False otherwise.
+lst = [1,3,4,5]
+
+def check_asce(lst):
+    for i in range(len(lst)):
+        if lst[i] > lst[i+1]:
+            return False
+    return True
+print(check_asce(lst))
